@@ -1,7 +1,15 @@
 {{define "fruit"}}
-<div class="border rounded">
+<div class="border rounded p-2">
   <div class="font-bold">{{.Name}}</div>
   <div>{{.Description}}</div>
-  <button class="border rounded">Delete</button>
+  <button
+    hx-delete="/fruits/id-goes-here"
+    hx-target="closest div"
+    hx-swap="outerHTML"
+    hx-confirm="Are you sure?"
+    class="text-red-800 cursor-pointer ml-auto"
+  >
+    Delete
+  </button>
 </div>
 {{end}}
