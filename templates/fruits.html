@@ -1,17 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Go + HTMX</title>
-    <link rel="stylesheet" href="static/output.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
-      integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
+{{define "content"}}
     <main class="max-w-3xl mx-auto">
       <h1 class="text-3xl my-4">Go + HTMX</h1>
 
@@ -53,5 +40,4 @@
         </div>
       </form>
     </main>
-  </body>
-</html>
+{{end}}

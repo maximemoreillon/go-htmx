@@ -14,13 +14,13 @@ type Fruit struct {
 }
 
 func getFruits(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("templates/index.html", "templates/fruit.html")
+	tmpl, err := template.ParseFiles("templates/layout.html", "templates/fruits.html", "templates/fruit.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	
+
 	type PageData struct {
 		Fruits []Fruit
 	}
@@ -32,7 +32,7 @@ func getFruits(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 
-	err = tmpl.Execute(w, data)
+	err = tmpl.ExecuteTemplate(w, "layout", data)
 	if err != nil {
 		log.Println("Execution error:", err)
 	}
