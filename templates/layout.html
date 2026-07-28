@@ -13,10 +13,10 @@
     ></script>
   </head>
   <body>
-    <main class="max-w-3xl mx-auto">
-      <h1 class="text-3xl my-4">Go + HTMX</h1>
-      {{template "content" .}}
-    </main>
+    <header class="border-b">
+      <h1 class="text-3xl my-4 text-center">Go + HTMX</h1>
+    </header>
+    <main class="max-w-3xl mx-auto">{{template "content" .}}</main>
   </body>
 </html>
 {{end}}
