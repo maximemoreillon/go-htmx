@@ -14,7 +14,7 @@ type Fruit struct {
 }
 
 func getFruits(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("templates/layout.html", "templates/fruits.html", "templates/fruit.html")
+	tmpl, err := template.ParseFiles("templates/layout.html", "templates/fruits/fruits.html", "templates/fruits/fruit.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -53,7 +53,7 @@ func postFruits(w http.ResponseWriter, r *http.Request) {
 		Description: r.PostForm.Get("description"),
 	}
 
-	tmpl, err := template.ParseFiles("templates/fruit.html")
+	tmpl, err := template.ParseFiles("templates/fruits/fruit.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
